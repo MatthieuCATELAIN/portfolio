@@ -13,7 +13,11 @@ export default async function Job() {
 
       <div className="flex flex-col gap-y-12">
       {job
-  .sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
+  .sort((a, b) => {
+    const dateA = a.startDate ? new Date(a.startDate).getTime() : 0;
+    const dateB = b.startDate ? new Date(b.startDate).getTime() : 0;
+    return dateB - dateA;
+  })
   .map((data) => (
     <div
       key={data._id}
