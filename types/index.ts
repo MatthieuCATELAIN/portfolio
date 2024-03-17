@@ -41,5 +41,5 @@ export type ProjectType = {
     image: string;
   };
   description: PortableTextBlock[];
-  skill: string[];
+  skills: string[];
 };
